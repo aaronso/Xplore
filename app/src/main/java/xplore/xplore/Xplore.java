@@ -32,6 +32,7 @@ public class Xplore extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        final Intent intent = new Intent(this, TrailActivity.class);
         for (int i=0; i < 128 ;i++)
             allTrails[i] = new Trail();
 
@@ -52,12 +53,9 @@ public class Xplore extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Intent i = new Intent(Xplore.this, TrailActivity.class);
 
-
-
-                i.putExtra("trailObject", position);
-                startActivity(i);
+                intent.putExtra("trailObject", position);
+                startActivity(intent);
             }
         });
 

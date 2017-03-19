@@ -66,7 +66,7 @@ public class ImageAdapter extends BaseAdapter {
                             allTrails[i].elevation = trail.getString("elevation");
                             allTrails[i].season = trail.getString("season");
                             allTrails[i].transportation = trail.getString("transportation");
-                            allTrails[i].url = trail.getString("name");
+                            allTrails[i].url = trail.getString("thumbnail");
 
 
 
