@@ -85,7 +85,7 @@
                 />
 
             <TextView
-                android:id="@+id/location"
+                android:id="@+id/travel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Location"
@@ -112,7 +112,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/loc_desc"
+                    android:id="@+id/travel_time"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="Location"
