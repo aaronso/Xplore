@@ -1,11 +1,10 @@
 package xplore.xplore;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,10 +13,12 @@ import android.widget.TextView;
  */
 
 public class ImageAdapter extends BaseAdapter {
-    private Context mContext;
+    //private Context mContext;
+    private LayoutInflater inflater;
 
     public ImageAdapter(Context c) {
-        mContext = c;
+        inflater = LayoutInflater.from(c);
+        //mContext = c;
     }
 
     public int getCount() {
@@ -36,19 +37,25 @@ public class ImageAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-        ImageView imageView;
+        ViewHolder holder;
         if (convertView == null) {
-            // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(500, 500));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
+            convertView = inflater.inflate(R.layout.grid_item, null);
+            holder = new ViewHolder();
+
+            holder.thumbTrail = (ImageView) convertView.findViewById(R.id.hikePic);
+            holder.nameTrail =  (TextView) convertView.findViewById(R.id.hikeName);
+            holder.trailDiff = (TextView) convertView.findViewById(R.id.hikeDiff);
+            holder.locTrail = (TextView) convertView.findViewById(R.id.hikeLoc);
+            holder.lengthTrail = (TextView) convertView.findViewById(R.id.hikeLen);
+
+            convertView.setTag(holder);
+
         } else {
-            imageView = (ImageView) convertView;
+            holder = (ViewHolder) convertView.getTag();
         }
 
-        imageView.setImageResource(mThumbIds[position]);
-        return imageView;
+        holder.thumbTrail.setImageResource(mThumbIds[position]);
+        return convertView;
     }
 
     // references to our images
@@ -65,11 +72,11 @@ public class ImageAdapter extends BaseAdapter {
     };
 
     static class ViewHolder {
-        ImageView campPic;
-        TextView campName;
-        TextView userName;
-        TextView destination;
-        Button details;
+        ImageView thumbTrail;
+        TextView nameTrail;
+        TextView trailDiff;
+        TextView locTrail;
+        TextView lengthTrail;
     }
 
 
