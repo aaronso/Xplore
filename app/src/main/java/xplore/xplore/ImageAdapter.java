@@ -1,6 +1,8 @@
 package xplore.xplore;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +15,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -27,7 +31,9 @@ import okhttp3.Response;
 public class ImageAdapter extends BaseAdapter {
     //private Context mContext;
     private LayoutInflater inflater;
+    ImageAdapter adapter;
     Trail allTrails[] = new Trail[128];
+
     ViewHolder holder;
 
         final OkHttpClient client = new OkHttpClient();
@@ -63,7 +69,20 @@ public class ImageAdapter extends BaseAdapter {
                             allTrails[i].elevation = trail.getString("elevation");
                             allTrails[i].season = trail.getString("season");
                             allTrails[i].transportation = trail.getString("transportation");
+                            allTrails[i].url = trail.getString("image");
 
+                            URL url = null;
+                            try {
+                                url = new URL(allTrails[i].url);
+                            } catch (MalformedURLException e) {
+                                e.printStackTrace();
+                            }
+                            Bitmap bmp = null;
+                            try {
+                                bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
 
                         }
 
@@ -72,7 +91,7 @@ public class ImageAdapter extends BaseAdapter {
                         e.printStackTrace();
                     }
 
-                    notifyDataSetChanged();
+                    //notifyDataSetChanged();
 
 
                 }
@@ -82,12 +101,21 @@ public class ImageAdapter extends BaseAdapter {
 
     public ImageAdapter(Context c) {
         inflater = LayoutInflater.from(c);
+        for (int i=0; i < 128 ;i++)
+            allTrails[i] = new Trail();
+
+        try {
+            getTrails();
+            notifyDataSetChanged();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         //mContext = c;
     }
 
 
     public int getCount() {
-        return mThumbIds.length;
+        return 128;
     }
 
     public Object getItem(int position) {
@@ -120,11 +148,12 @@ public class ImageAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
 
-        try {
-            getTrails();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            getTrails();
+//            notifyDataSetChanged();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 //        try {
 //            //String dataJSON  = ("http://138.197.140.12/api");
 //            JSONObject obj;
@@ -141,10 +170,15 @@ public class ImageAdapter extends BaseAdapter {
 //        }
 
             holder.thumbTrail.setImageResource(R.drawable.sample_2);
+
             holder.nameTrail.setText(allTrails[position].name);
             holder.trailDiff.setText(allTrails[position].difficulty);
             holder.locTrail.setText(allTrails[position].name);
             holder.lengthTrail.setText(allTrails[position].length);
+
+            if (allTrails[position].bmp != null){
+                holder.thumbTrail.setImageBitmap(allTrails[position].bmp);
+            }
 
         return convertView;
     }
@@ -163,7 +197,9 @@ public class ImageAdapter extends BaseAdapter {
     };
 
     static class Trail {
+        String url ="https://www.vancouvertrails.com/images/photos/lindeman-lake-1.jpg";
         int pic = R.drawable.sample_2;
+        Bitmap bmp = null;
         String id = "";
         String name = "";
         String time = "";

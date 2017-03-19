@@ -27,6 +27,7 @@
             android:text="some hike"
             android:textColor="@color/black"
             android:layout_weight="2"
+            android:singleLine="true"
             android:paddingLeft="5dp"
             android:layout_below="@+id/hikePic"/>
 
@@ -36,6 +37,7 @@
             android:layout_height="match_parent"
             android:text="hard"
             android:paddingLeft="5dp"
+            android:singleLine="true"
             android:textColor="@color/black"
             android:layout_weight="3"
             android:layout_below="@+id/hikeName"/>
@@ -50,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="the mountain"
+                android:singleLine="true"
                 android:paddingLeft="5dp"
                 android:textColor="@color/black"
                 android:layout_weight="3"
@@ -60,6 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="0.0 km"
+                android:singleLine="true"
                 android:textColor="@color/black"
                 android:layout_weight="7"
                 android:layout_toRightOf="@+id/hikeLoc"/>
