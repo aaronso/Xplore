@@ -30,20 +30,23 @@
             android:scaleType="fitXY"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/xplorelogo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="100dp"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="Xplor"
+            android:textSize="25dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
         <TextView
+            android:id="@+id/place_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Hollyburn Mountain"
             android:textSize="35sp"
+            android:textColor="#FFFFFF"
             android:layout_marginTop="125dp"
             android:layout_marginLeft="50dp"/>
 
@@ -235,6 +238,7 @@
 
         </TableLayout>
         <Button
+            android:id="@+id/navigate_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
