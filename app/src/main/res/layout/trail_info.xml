@@ -1,18 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="vertical"
+    android:layout_weight="1">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="194dp"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
-</LinearLayout>
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/picture_nameframe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:adjustViewBounds="true"
+            android:layout_width="match_parent"
+            android:layout_height="218dp"
+            android:src="@drawable/mainsplashbgimg"
+            android:scaleType="fitXY"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="100dp"
+            android:layout_weight="1"
+            android:text="TextView"
+            android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Hollyburn Mountain"
+            android:textSize="35sp"
+            android:layout_marginTop="125dp"
+            android:layout_marginLeft="50dp"/>
+
+    </FrameLayout>
+<!--TODO: please replace the below textViews "hello" values with parsed data-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:background="#FFFFFF"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:textAlignment="center"
+            android:gravity="left">
+
+            <TextView
+                android:id="@+id/diff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Difficulty"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="50dp"
+                />
+            </TableRow>
+            <TableRow
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:gravity="left"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/diff_desc"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Difficulty"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/loc_desc"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    android:paddingLeft="50dp"
+                    />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#CFCFCF"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Duration"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    />
+
+            </TableRow>
+            <TableRow
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:textAlignment="center"
+                android:gravity="left"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/duration_desc"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="1 minute"
+                    android:textColor="#000000"
+                    android:textSize="20dp"
+                    />
+
+            </TableRow>
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#CFCFCF" />
+
+            <TextView
+                android:id="@+id/roundtrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Round Trip"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/roundtrip_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="8 Kilometers"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#CFCFCF"/>
+
+            <TextView
+                android:id="@+id/elevation_gain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Elevation Gain"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp" />
+            <TextView
+                android:id="@+id/elevation_gain_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="high like an airplane"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#CFCFCF"/>
+
+            <TextView
+                android:id="@+id/season"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Season"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingTop="10dp" />
+            <TextView
+                android:id="@+id/season_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="May - August"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingBottom="10dp"/>
+
+        </TableLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="215dp"
+            android:text="Navigate    "
+            android:textAllCaps="false"
+            android:textSize="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingLeft="15dp"
+            android:textColor="#000000"
+            android:background="@drawable/trailinfobutborder"/>
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/navarrow"
+            android:layout_marginTop="93dp"
+            android:layout_marginLeft="313dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerInside"
+            />
+
+    </FrameLayout>
+
+
+</RelativeLayout>
