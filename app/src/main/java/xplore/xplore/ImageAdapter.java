@@ -51,7 +51,7 @@ public class ImageAdapter extends BaseAdapter {
                         JSONObject obj = new JSONObject(jsonData);
                         JSONArray data = obj.getJSONArray("data");
                         int n = data.length();
-                        for (int i = 0; i < n; i++){
+                        for (int i = 0; i < 128; i++){
                             JSONObject trail = data.getJSONObject(i);
                             allTrails[i].id = trail.getString("id");
                             allTrails[i].name = trail.getString("name");

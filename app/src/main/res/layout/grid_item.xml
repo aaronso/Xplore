@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/shadow"
+    android:padding="2dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/notWhite">
+
 
     <ImageView
         android:id="@+id/hikePic"
@@ -16,7 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="some hike"
+            android:textColor="@color/black"
             android:layout_weight="2"
+            android:paddingLeft="5dp"
             android:layout_below="@+id/hikePic"/>
 
         <TextView
@@ -24,6 +35,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="hard"
+            android:paddingLeft="5dp"
+            android:textColor="@color/black"
             android:layout_weight="3"
             android:layout_below="@+id/hikeName"/>
 
@@ -37,6 +50,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="the mountain"
+                android:paddingLeft="5dp"
+                android:textColor="@color/black"
                 android:layout_weight="3"
                 />
 
@@ -45,10 +60,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="0.0 km"
+                android:textColor="@color/black"
                 android:layout_weight="7"
                 android:layout_toRightOf="@+id/hikeLoc"/>
 
         </LinearLayout>
 
-
-</RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

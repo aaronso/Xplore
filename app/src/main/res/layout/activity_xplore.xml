@@ -4,50 +4,56 @@
     android:id="@+id/activity_xplore"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="xplore.xplore.Xplore">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/notWhite">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4"/>
+            android:layout_weight="4"
+            android:scaleY="1.25"
+
+            android:background="@drawable/xplore"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:background="@color/navBlue">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="all"
+                android:background="@color/navBlue"
                 android:layout_weight="4"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Trails"
+                android:background="@color/navBlue"
                 android:layout_weight="4"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Parks"
+                android:background="@color/navBlue"
                 android:layout_weight="4"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Hidden Gems"
+                android:background="@color/navBlue"
                 android:layout_weight="3"/>
 
 
@@ -57,12 +63,13 @@
             android:id="@+id/gridview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="10dp"
+            android:padding="25dp"
             android:layout_weight="2"
             android:numColumns="2"
-            android:verticalSpacing="50dp"
-            android:horizontalSpacing="50dp"
+            android:verticalSpacing="25dp"
+            android:horizontalSpacing="25dp"
             android:stretchMode="columnWidth"
+            android:background="@drawable/xplore_bg"
             >
 
 
