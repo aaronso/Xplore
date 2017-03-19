@@ -142,8 +142,8 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
         String length = "8km";
         String difficulty = "Intermediate";
         String elevation = "300m";
-        String season = "";
-        String transportation = "";
+        String season = "Fall";
+        String transportation = "45 min";
 
     }
 
