@@ -57,6 +57,7 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
             theTrail.season = trailObj.getString("season");
             theTrail.transportation = trailObj.getString("transportation");
             theTrail.url = trailObj.getString("thumbnail");
+            updateTextViews();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -110,6 +111,15 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
+    private void updateTextViews(){
+        placeName.setText(theTrail.name);
+        difficultyLevel.setText(theTrail.difficulty);
+        travelTime.setText(theTrail.transportation);
+        durationDesc.setText(theTrail.time);
+        roundTripDesc.setText(theTrail.length);
+        elevationGainDesc.setText(theTrail.elevation);
+        seasonDesc.setText(theTrail.season);
+    }
     @Override
     public void onClick(View v) {
 
