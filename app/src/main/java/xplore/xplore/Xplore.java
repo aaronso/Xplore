@@ -126,7 +126,7 @@ public class Xplore extends AppCompatActivity {
 
     static class Trail {
         String url ="https://www.vancouvertrails.com/images/photos-thumbnail/lindeman-lake-1.jpg";
-        int pic = R.drawable.sample_2;
+        int pic = R.drawable.sample_3;
         Bitmap bmp = null;
         String id = "";
         String name = "";

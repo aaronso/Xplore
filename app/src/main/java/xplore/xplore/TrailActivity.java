@@ -1,6 +1,5 @@
 package xplore.xplore;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -49,6 +48,8 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trail_info);
+        Bundle i = getIntent().getExtras();
+        objNum = i.getInt("trailObject");
         try {
             get1Trail();
 
@@ -61,8 +62,8 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
         //loadCustomFonts();
         //setCustomFonts();
         setButtonsAndTextViews();
-        Intent i = getIntent();
-        objNum = i.getIntExtra("trailObject", 0);
+
+        updateTextViews();
 
     }
 
@@ -131,16 +132,16 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
 
     static class Trail {
         String url ="https://www.vancouvertrails.com/images/photos-thumbnail/lindeman-lake-1.jpg";
-        int pic = R.drawable.sample_2;
+        int pic = R.drawable.sample_3;
         Bitmap bmp = null;
         String id = "";
-        String name = "";
-        String time = "";
+        String name = "Trail Info";
+        String time = "2 Hrs";
         float lat = 0;
         float lon = 0;
-        String length = "";
-        String difficulty = "";
-        String elevation = "";
+        String length = "8km";
+        String difficulty = "Intermediate";
+        String elevation = "300m";
         String season = "";
         String transportation = "";
 

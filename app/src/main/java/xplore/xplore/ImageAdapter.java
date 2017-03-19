@@ -157,7 +157,7 @@ public class ImageAdapter extends BaseAdapter {
 //            e.printStackTrace();
 //        }
 
-            holder.thumbTrail.setImageResource(R.drawable.sample_2);
+            //holder.thumbTrail.setImageResource(R.drawable.sample_3);
 
             holder.nameTrail.setText(allTrails[position].name);
             holder.trailDiff.setText(allTrails[position].difficulty);
@@ -177,7 +177,7 @@ public class ImageAdapter extends BaseAdapter {
 
     static class Trail {
         String url ="https://www.vancouvertrails.com/images/photos-thumbnails/lindeman-lake-1.jpg";
-        int pic = R.drawable.sample_2;
+        int pic = R.drawable.sample_3;
         Bitmap bmp = null;
         String id = "";
         String name = "";
