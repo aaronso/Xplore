@@ -1,13 +1,14 @@
 package xplore.xplore;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,10 +25,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-
 public class Xplore extends AppCompatActivity {
 
     Trail allTrails[] = new Trail[128];
+    JSONObject trail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +53,12 @@ public class Xplore extends AppCompatActivity {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-                Toast.makeText(Xplore.this, "" + position,
-                        Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(Xplore.this, TrailActivity.class);
+
+
+
+                i.putExtra("trailObject", (Parcelable) trail);
+                startActivity(i);
             }
         });
 
@@ -82,7 +87,7 @@ public class Xplore extends AppCompatActivity {
                     JSONArray data = obj.getJSONArray("data");
                     int n = data.length();
                     for (int i = 0; i < 128; i++){
-                        JSONObject trail = data.getJSONObject(i);
+                        trail = data.getJSONObject(i);
                         allTrails[i].id = trail.getString("id");
                         allTrails[i].name = trail.getString("name");
                         allTrails[i].time = trail.getString("time");
@@ -93,7 +98,7 @@ public class Xplore extends AppCompatActivity {
                         allTrails[i].elevation = trail.getString("elevation");
                         allTrails[i].season = trail.getString("season");
                         allTrails[i].transportation = trail.getString("transportation");
-                        allTrails[i].url = trail.getString("image");
+                        allTrails[i].url = trail.getString("thumbnail");
 
                         URL url = null;
                         try {
@@ -123,7 +128,7 @@ public class Xplore extends AppCompatActivity {
     }
 
     static class Trail {
-        String url ="https://www.vancouvertrails.com/images/photos/lindeman-lake-1.jpg";
+        String url ="https://www.vancouvertrails.com/images/photos-thumbnail/lindeman-lake-1.jpg";
         int pic = R.drawable.sample_2;
         Bitmap bmp = null;
         String id = "";

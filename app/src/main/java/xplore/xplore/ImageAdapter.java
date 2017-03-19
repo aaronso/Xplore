@@ -2,7 +2,6 @@ package xplore.xplore;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,8 +14,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -69,20 +66,9 @@ public class ImageAdapter extends BaseAdapter {
                             allTrails[i].elevation = trail.getString("elevation");
                             allTrails[i].season = trail.getString("season");
                             allTrails[i].transportation = trail.getString("transportation");
-                            allTrails[i].url = trail.getString("image");
+                            allTrails[i].url = trail.getString("name");
 
-                            URL url = null;
-                            try {
-                                url = new URL(allTrails[i].url);
-                            } catch (MalformedURLException e) {
-                                e.printStackTrace();
-                            }
-                            Bitmap bmp = null;
-                            try {
-                                bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
+
 
                         }
 
@@ -144,6 +130,8 @@ public class ImageAdapter extends BaseAdapter {
 
             convertView.setTag(holder);
 
+
+
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
@@ -176,25 +164,16 @@ public class ImageAdapter extends BaseAdapter {
             holder.locTrail.setText(allTrails[position].name);
             holder.lengthTrail.setText(allTrails[position].length);
 
-            if (allTrails[position].bmp != null){
-                holder.thumbTrail.setImageBitmap(allTrails[position].bmp);
-            }
+        new DownloadImageTask((ImageView) convertView.findViewById(R.id.hikePic))
+                .execute(allTrails[position].url);
+
+                //holder.thumbTrail.setImageBitmap(allTrails[position].bmp);
 
         return convertView;
     }
 
-    // references to our images
-    private Integer[] mThumbIds = {
-            R.drawable.sample_2,
-            R.drawable.sample_2,
-            R.drawable.sample_2,
-            R.drawable.sample_2,
-            R.drawable.sample_2,
-            R.drawable.sample_2,
-            R.drawable.sample_2,
 
 
-    };
 
     static class Trail {
         String url ="https://www.vancouvertrails.com/images/photos/lindeman-lake-1.jpg";
