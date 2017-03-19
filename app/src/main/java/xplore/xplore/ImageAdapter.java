@@ -176,7 +176,7 @@ public class ImageAdapter extends BaseAdapter {
 
 
     static class Trail {
-        String url ="https://www.vancouvertrails.com/images/photos/lindeman-lake-1.jpg";
+        String url ="https://www.vancouvertrails.com/images/photos-thumbnails/lindeman-lake-1.jpg";
         int pic = R.drawable.sample_2;
         Bitmap bmp = null;
         String id = "";
