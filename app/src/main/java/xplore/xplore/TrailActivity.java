@@ -2,6 +2,7 @@ package xplore.xplore;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,12 +32,15 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
     TextView season;
     TextView seasonDesc;
     Button navButton;
+    Typeface quickBold, quickReg, quickMed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.trail_info);
         setButtonsAndTextViews();
+        loadCustomFonts();
+        setCustomFonts();
         Intent i = getIntent();
         JSONObject trailObj = (JSONObject) i.getParcelableExtra("trailObject");
 
@@ -75,6 +79,35 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
         season = (TextView)findViewById(R.id.season);
         seasonDesc = (TextView)findViewById(R.id.season_desc);
         navButton = (Button)findViewById(R.id.navigate_button);
+    }
+
+    private void loadCustomFonts(){
+        quickBold = Typeface.createFromAsset(getAssets(), "fonts/Quicksand-Bold.ttf");
+        quickReg = Typeface.createFromAsset(getAssets(), "fonts/Quicksand-Regular.ttf");
+        quickMed = Typeface.createFromAsset(getAssets(), "fonts/Quicksand-Medium.ttf");
+        //splashButton.setTypeface(FontTypo);
+
+    }
+
+    private void setCustomFonts(){
+        placeName.setTypeface(quickReg);
+
+        //header fonts
+        difficulty.setTypeface(quickBold);
+        travel.setTypeface(quickBold);
+        duration.setTypeface(quickBold);
+        roundTrip.setTypeface(quickBold);
+        elevationGain.setTypeface(quickBold);
+        season.setTypeface(quickBold);
+
+        //body fonts
+        difficultyLevel.setTypeface(quickMed);
+        travelTime.setTypeface(quickMed);
+        durationDesc.setTypeface(quickMed);
+        roundTripDesc.setTypeface(quickMed);
+        elevationGainDesc.setTypeface(quickMed);
+        seasonDesc.setTypeface(quickMed);
+
     }
 
     @Override
