@@ -6,27 +6,18 @@
     android:orientation="vertical"
     android:layout_weight="1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-    </LinearLayout>
 
     <FrameLayout
         android:id="@+id/picture_nameframe"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/trailinfoheaderbox"
         android:orientation="horizontal">
 
         <ImageView
             android:adjustViewBounds="true"
             android:layout_width="match_parent"
-            android:layout_height="218dp"
+            android:layout_height="wrap_content"
             android:src="@drawable/mainsplashbgimg"
             android:background="@drawable/trailinfoheaderbox"
             android:scaleType="fitXY"
@@ -35,18 +26,18 @@
         <TextView
             android:id="@+id/xplorelogo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="100dp"
             android:layout_weight="1"
-            android:text="Xplor"
+            android:text="Xplore"
             android:textSize="25dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title" />
 
         <TextView
             android:id="@+id/place_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Trail Info"
             android:textSize="35sp"
             android:textColor="#FFFFFF"
@@ -54,22 +45,21 @@
             android:layout_marginLeft="50dp"/>
 
     </FrameLayout>
-<!--TODO: please replace the below textViews "hello" values with parsed data-->
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_height="match_parent"
         android:background="#FFFFFF"
-        android:layout_alignParentBottom="true"
+        android:layout_marginTop="218dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="20dp"
             android:textAlignment="center"
@@ -88,7 +78,7 @@
                 android:id="@+id/travel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="Travel Time"
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:paddingLeft="50dp"
@@ -96,11 +86,11 @@
             </TableRow>
             <TableRow
                 android:layout_width="150dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:textAlignment="center"
                 android:gravity="left"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="5dp">
 
                 <TextView
                     android:id="@+id/diff_desc"
@@ -113,9 +103,9 @@
 
                 <TextView
                     android:id="@+id/travel_time"
-                    android:layout_width="150dp"
+                    android:layout_width="155dp"
                     android:layout_height="wrap_content"
-                    android:text="Location"
+                    android:text="45 minutes"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     android:paddingLeft="50dp"
@@ -129,7 +119,7 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:textAlignment="center"
@@ -147,17 +137,17 @@
             </TableRow>
             <TableRow
                 android:layout_width="150dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:textAlignment="center"
                 android:gravity="left"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="5dp">
 
                 <TextView
                     android:id="@+id/duration_desc"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="1 minute"
+                    android:text="30 minutes"
                     android:textColor="#000000"
                     android:textSize="20dp"
                     />
@@ -189,7 +179,7 @@
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:paddingLeft="20dp"
-                android:paddingBottom="10dp"/>
+                android:layout_marginBottom="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -213,7 +203,7 @@
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:paddingLeft="20dp"
-                android:paddingBottom="10dp"/>
+                android:layout_marginBottom="5dp"/>
 
             <View
                 android:layout_width="match_parent"
@@ -237,14 +227,14 @@
                 android:textColor="#000000"
                 android:textSize="20dp"
                 android:paddingLeft="20dp"
-                android:paddingBottom="10dp"/>
+                android:layout_marginBottom="5dp"/>
 
         </TableLayout>
         <Button
             android:id="@+id/navigate_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="90dp"
             android:layout_marginLeft="215dp"
             android:text="Navigate    "
             android:textAllCaps="false"
@@ -259,7 +249,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/navarrow"
-            android:layout_marginTop="93dp"
+            android:layout_marginTop="103dp"
             android:layout_marginLeft="313dp"
             android:adjustViewBounds="true"
             android:scaleType="centerInside"

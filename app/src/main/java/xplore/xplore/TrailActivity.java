@@ -58,8 +58,8 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
         }
         while (flag){}
         setButtonsAndTextViews();
-        //loadCustomFonts();
-        //setCustomFonts();
+        loadCustomFonts();
+        setCustomFonts();
         setButtonsAndTextViews();
         Intent i = getIntent();
         objNum = i.getIntExtra("trailObject", 0);
