@@ -59,8 +59,8 @@ public class TrailActivity extends AppCompatActivity implements View.OnClickList
         }
         while (flag){}
         setButtonsAndTextViews();
-        //loadCustomFonts();
-        //setCustomFonts();
+        loadCustomFonts();
+        setCustomFonts();
         setButtonsAndTextViews();
 
         updateTextViews();
