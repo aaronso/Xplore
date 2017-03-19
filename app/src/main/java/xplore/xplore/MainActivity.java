@@ -16,15 +16,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        loadCustomFont();
 
+        splashButton = (Button)findViewById(R.id.splash_button);
         splashButton.setOnClickListener(this);
 
+        loadCustomFont();
     }
 
     private void loadCustomFont(){
-        splashButton = (Button)findViewById(R.id.splash_button);
-        Typeface FontTypo = Typeface.createFromAsset(getAssets(), "fonts/Quicksand-Bold.ttf");
+        Typeface FontTypo = Typeface.createFromAsset(getAssets(), "fonts/Typo_Round_Thin_Demo.ttf");
         splashButton.setTypeface(FontTypo);
 
     }
