@@ -34,5 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         Intent i = new Intent(this, Xplore.class);
         startActivity(i);
+        // need to add code to get to trail info layout
     }
 }
